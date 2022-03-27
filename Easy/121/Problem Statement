@@ -1,0 +1,52 @@
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+ 
+
+Example 1:
+
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+Example 2:
+
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+ 
+
+Constraints:
+
+1 <= prices.length <= 105
+0 <= prices[i] <= 104
+
+
+Approach:
+
+
+Let's understand this problem by an imagination. Imagine you have given a time machine, you can go to past to buy the stock of your choice when the price is very least. And again using that time machine you went into future to sell the stock.
+
+
+By doing that you have achieve maximum profit. From buying at very least price and selling at very higher price. And you have become rich now!
+
+
+
+Now let's just understand it with our given example,
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+
+
+
+Remember one rule :- You can only buy one time & sell one time
+
+So, if buy at 7 & sell at any time in the future, we'll face loss. Because buying price is way higher then selling price available we have
+
+Now, I have seen a dip & I buy at 1 & sell at 5 my overall profit will be 5 - 1 = 4
+
+But what if, I had buy at 1 & sell at 6 my profit will be 6 - 1 = 5. Which is greater then my overall profit. So, i will update my overall profit with new value.
+
+Now we have done as further we don't have any higher point to sell. We will return our answer.
